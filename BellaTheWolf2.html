@@ -4,155 +4,263 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bella the Wolf: A Controversial Figure</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
-            font-family: 'Helvetica Neue', Arial, sans-serif;
-            background-color: #f4f7f6;
+            font-family: 'Roboto', sans-serif;
+            background-color: #f0f2f5;
             color: #333;
             margin: 0;
             padding: 0;
-            line-height: 1.6;
+            line-height: 1.7;
+            transition: background-color 0.3s, color 0.3s;
         }
 
         header {
-            background-color: #3e4444;
+            background-color: #4a4a4a;
             color: #fff;
-            padding: 20px 0;
+            padding: 20px;
             text-align: center;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
 
         header h1 {
             margin: 0;
             font-size: 2.5em;
+            font-weight: bold;
         }
 
         .container {
-            max-width: 900px;
-            margin: 40px auto;
+            max-width: 1000px;
+            margin: 50px auto;
             background: #fff;
-            padding: 20px 30px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
         }
 
         h2 {
-            color: #444;
+            color: #555;
             margin-top: 30px;
-            margin-bottom: 10px;
-            font-size: 1.8em;
-            border-bottom: 2px solid #ddd;
+            margin-bottom: 20px;
+            font-size: 2em;
+            border-bottom: 2px solid #eee;
             padding-bottom: 10px;
         }
 
         p {
             margin-bottom: 20px;
-            font-size: 1.1em;
+            font-size: 1.2em;
             text-align: justify;
         }
 
-        .language-toggle {
-            text-align: center;
+        .color-toggle {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
             margin-top: 30px;
-            padding-top: 20px;
-            border-top: 1px solid #ddd;
         }
 
-        .language-toggle h2 {
-            margin-bottom: 15px;
-            font-size: 1.5em;
-        }
-
-        .language-toggle p {
-            margin-bottom: 15px;
-        }
-
-        .language-toggle a {
+        .color-button {
             display: inline-block;
-            margin: 0 10px;
-            color: #3e4444;
-            text-decoration: none;
-            font-weight: bold;
             padding: 10px 20px;
-            border: 2px solid #3e4444;
+            font-size: 1.1em;
+            color: #fff;
+            background-color: #4a4a4a;
+            border: none;
             border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
             transition: background-color 0.3s, color 0.3s;
+            text-align: center;
         }
 
-        .language-toggle a:hover {
-            background-color: #3e4444;
+        .color-button:hover {
+            background-color: #333;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #4a4a4a;
             color: #fff;
+            margin-top: 30px;
+            border-top: 4px solid #666;
+            font-size: 0.9em;
+        }
+
+        .footer a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+
+        .footer a:hover {
+            color: #ccc;
+        }
+
+        /* Color Schemes */
+        .theme-light {
+            --background-color: #f0f2f5;
+            --header-background: #4a4a4a;
+            --content-background: #fff;
+            --text-color: #333;
+        }
+
+        .theme-dark {
+            --background-color: #333;
+            --header-background: #000;
+            --content-background: #444;
+            --text-color: #ddd;
+        }
+
+        .theme-blue {
+            --background-color: #e0f7fa;
+            --header-background: #00796b;
+            --content-background: #b2dfdb;
+            --text-color: #004d40;
+        }
+
+        body {
+            background-color: var(--background-color);
+            color: var(--text-color);
+        }
+
+        header {
+            background-color: var(--header-background);
+        }
+
+        .container {
+            background: var(--content-background);
         }
     </style>
 </head>
-<body>
+<body class="theme-light">
 
 <header>
-    <h1>Bella the Wolf: A Controversial Figure</h1>
+    <h1 id="title">Bella the Wolf: A Controversial Figure</h1>
 </header>
 
 <div class="container">
-    <h2>About Bella the Wolf</h2>
-    <p>Bella the Wolf is a YouTuber known for his provocative and offensive content. He has been criticized for making fun of religions, soldiers, and even famous YouTubers like Technoblade and Tyrecords. His behavior has sparked outrage and concern among many in the online community.</p>
+    <h2 id="about">About Bella the Wolf</h2>
+    <p id="about-text">Bella the Wolf is a YouTuber known for his provocative and offensive content. He has been criticized for making fun of religions, soldiers, and even famous YouTubers like Technoblade and Tyrecords. His behavior has sparked outrage and concern among many in the online community.</p>
     
-    <h2>Religious Disrespect</h2>
-    <p>One of the most disturbing aspects of Bella the Wolf's content is his blatant disrespect for religious beliefs. He has been known to mock and belittle people of various faiths, using derogatory language and stereotypes to perpetuate harmful and offensive ideologies. This kind of behavior is not only hurtful to individuals but also contributes to a culture of intolerance and discrimination.</p>
+    <h2 id="religious-disrespect">Religious Disrespect</h2>
+    <p id="religious-disrespect-text">One of the most disturbing aspects of Bella the Wolf's content is his blatant disrespect for religious beliefs. He has been known to mock and belittle people of various faiths, using derogatory language and stereotypes to perpetuate harmful and offensive ideologies. This kind of behavior is not only hurtful to individuals but also contributes to a culture of intolerance and discrimination.</p>
     
-    <h2>Disrespect Towards Soldiers</h2>
-    <p>In addition to his attacks on religion, Bella the Wolf has also been criticized for his disrespect towards soldiers. He has made fun of their sacrifices, calling them "brainwashed" and implying that they are somehow less intelligent or capable than others. This kind of rhetoric is not only offensive but also harmful, as it perpetuates negative stereotypes and undermines the important work that soldiers do to protect their countries.</p>
+    <h2 id="disrespect-soldiers">Disrespect Towards Soldiers</h2>
+    <p id="disrespect-soldiers-text">In addition to his attacks on religion, Bella the Wolf has also been criticized for his disrespect towards soldiers. He has made fun of their sacrifices, calling them "brainwashed" and implying that they are somehow less intelligent or capable than others. This kind of rhetoric is not only offensive but also harmful, as it perpetuates negative stereotypes and undermines the important work that soldiers do to protect their countries.</p>
     
-    <h2>Attacks on Famous YouTubers</h2>
-    <p>Bella the Wolf's behavior towards famous YouTubers is also worth noting. He has been known to make fun of Technoblade and Tyrecords, using derogatory language and personal attacks to try and discredit them. This kind of behavior is not only unprofessional but also harmful, as it contributes to a culture of toxicity and negativity in the online community.</p>
+    <h2 id="attacks-youtubers">Attacks on Famous YouTubers</h2>
+    <p id="attacks-youtubers-text">Bella the Wolf's behavior towards famous YouTubers is also worth noting. He has been known to make fun of Technoblade and Tyrecords, using derogatory language and personal attacks to try and discredit them. This kind of behavior is not only unprofessional but also harmful, as it contributes to a culture of toxicity and negativity in the online community.</p>
     
-    <h2>Racism Accusations</h2>
-    <p>Ironically, despite accusing others of being racist, Bella the Wolf has been accused of being racist himself. His content often targets marginalized groups and individuals, using harmful stereotypes and perpetuating negative attitudes towards people of color, women, and other underrepresented groups. This kind of behavior is not only offensive but also harmful, as it contributes to a culture of discrimination and oppression.</p>
+    <h2 id="racism-accusations">Racism Accusations</h2>
+    <p id="racism-accusations-text">Ironically, despite accusing others of being racist, Bella the Wolf has been accused of being racist himself. His content often targets marginalized groups and individuals, using harmful stereotypes and perpetuating negative attitudes towards people of color, women, and other underrepresented groups. This kind of behavior is not only offensive but also harmful, as it contributes to a culture of discrimination and oppression.</p>
     
-    <h2>Mocking Mental Health</h2>
-    <p>Bella the Wolf's behavior towards people who struggle with depression and mental health issues is also worth noting. He has been known to make fun of people who are struggling, calling them "emo" and perpetuating harmful stereotypes about mental illness. This kind of behavior is not only offensive but also harmful, as it contributes to a culture of stigma and shame around mental health.</p>
+    <h2 id="mocking-mental-health">Mocking Mental Health</h2>
+    <p id="mocking-mental-health-text">Bella the Wolf's behavior towards people who struggle with depression and mental health issues is also worth noting. He has been known to make fun of people who are struggling, calling them "emo" and perpetuating harmful stereotypes about mental illness. This kind of behavior is not only offensive but also harmful, as it contributes to a culture of stigma and shame around mental health.</p>
     
-    <h2>Insulting Queen Elizabeth</h2>
-    <p>In a bizarre display of disrespect, Bella the Wolf has even gone so far as to insult Queen Elizabeth, referring to her as a "hag". This kind of behavior is not only offensive but also shows a complete lack of respect for authority and tradition. It's unclear what motivates Bella the Wolf to engage in this kind of behavior, but it's clear that he has no qualms about offending people or perpetuating harmful ideologies.</p>
+    <h2 id="insulting-queen">Insulting Queen Elizabeth</h2>
+    <p id="insulting-queen-text">In a bizarre display of disrespect, Bella the Wolf has even gone so far as to insult Queen Elizabeth, referring to her as a "hag". This kind of behavior is not only offensive but also shows a complete lack of respect for authority and tradition. It's unclear what motivates Bella the Wolf to engage in this kind of behavior, but it's clear that he has no qualms about offending people or perpetuating harmful ideologies.</p>
     
-    <h2>Final Thoughts</h2>
-    <p>Bella the Wolf's content is not only harmful but also toxic, and it's essential to be aware of his actions and the harm he causes to individuals and communities. By promoting respectful dialogue and calling out harmful behavior, we can work towards creating a more positive and inclusive online community.</p>
+    <h2 id="final-thoughts">Final Thoughts</h2>
+    <p id="final-thoughts-text">Bella the Wolf's content is not only harmful but also toxic, and it's essential to be aware of his actions and the harm he causes to individuals and communities. By promoting respectful dialogue and calling out harmful behavior, we can work towards creating a more positive and inclusive online community.</p>
     
-    <p>It's worth noting that Bella the Wolf's behavior is not representative of the entire YouTube community. There are many creators who work hard to promote positivity, respect, and inclusivity, and it's essential to support and uplift these voices.</p>
+    <h2 id="conclusion">Conclusion</h2>
+    <p id="conclusion-text">In conclusion, Bella the Wolf's behavior is a cause for concern, and it's essential to be aware of the harm he causes to individuals and communities. By promoting respectful dialogue and calling out harmful behavior, we can work towards creating a more positive and inclusive online community.</p>
     
-    <h2>Conclusion</h2>
-    <p>In conclusion, Bella the Wolf's behavior is a cause for concern, and it's essential to be aware of the harm he causes to individuals and communities. By promoting respectful dialogue and calling out harmful behavior, we can work towards creating a more positive and inclusive online community.</p>
-    
+    <div class="color-toggle">
+        <button class="color-button" onclick="setTheme('theme-light')">Light Theme</button>
+        <button class="color-button" onclick="setTheme('theme-dark')">Dark Theme</button>
+        <button class="color-button" onclick="setTheme('theme-blue')">Blue Theme</button>
+    </div>
+
     <div class="language-toggle">
-        <h2>Türkçe Seçenek</h2>
-        <h2>Bella the Wolf Hakkında</h2>
-        <p>Bella the Wolf, Provokatif ve saldırı içeriği ile bilinen bir YouTuber'dir. Din, askerler ve ünlü YouTuber'lar gibi Technoblade ve Tyrecords'a saldırarak eleştirilmiştir. Onun davranışı, çevrimiçi topluluk arasında öfke ve endişe yaratmıştır.</p>
-        
-        <h2>Dini Saygısızlık</h2>
-        <p>Bella the Wolf'un içeriğinin en rahatsız edici yönlerinden biri, dini inançlara açık bir saygısızlıktır. Farklı dinlere mensup insanları aşağılayıcı dil ve stereotipler kullanarak, zararlı ve saldırı içeriği yaymaktadır. Bu tür davranış, sadece bireylere zarar vermekle kalmaz, aynı zamanda hoşgörüsüzlük ve ayrımcılık kültürünü de desteklemektedir.</p>
-        
-        <h2>Askerlere Saygısızlık</h2>
-        <p>Bella the Wolf'un askerlere yönelik davranışları da eleştirilmiştir. Onların fedakarlıklarını alay ederek, "beyin yıkama" ve diğerlerini aşağılayıcı ifadelerle, askerlerin önemli işlerini yok saymaktadır. Bu tür retorik, sadece saldırı değil, aynı zamanda askerlerin ülkelerini korumak için yaptıkları önemli çalışmaya da zarar vermektedir.</p>
-        
-        <h2>Ünlü YouTuber'lara Saldırılar</h2>
-        <p>Bella the Wolf'un ünlü YouTuber'lar gibi Technoblade ve Tyrecords'a yönelik davranışları da eleştirilmiştir. Onları aşağılayıcı dil ve kişisel saldırılarla, onları diskalifiye etmeye çalışmaktadır. Bu tür davranış, sadece profesyonel değil, aynı zamanda çevrimiçi toplulukta toksik ve negatif bir kültür yaratmaya da katkıda bulunmaktadır.</p>
-        
-        <h2>Irkçılık Suçlamaları</h2>
-        <p>Ironik olarak, ırkçı olmakla suçlayan Bella the Wolf, kendisi de ırkçı olmakla suçlanmıştır. Onun içeriği, marjinal gruplar ve bireyler hedef almaktadır, zararlı stereotipler ve ırkçı tutumlar yaymaktadır. Bu tür davranış, sadece saldırı değil, aynı zamanda ayrımcılık ve baskı kültürünü de desteklemektedir.</p>
-        
-        <h2>Ruh Sağlığıyla Alay Etme</h2>
-        <p>Bella the Wolf'un depresyon ve ruh sağlığı sorunları yaşayan insanlara yönelik davranışları da eleştirilmiştir. Zorlanan insanlara alay ederek, onları "emo" olarak adlandırmakta ve ruh sağlığı ile ilgili zararlı stereotipleri yaymaktadır. Bu tür davranış, sadece saldırı değil, aynı zamanda ruh sağlığı etrafındaki damgalama ve utanç kültürüne de katkıda bulunmaktadır.</p>
-        
-        <h2>Kraliçe Elizabeth'e Hakaret</h2>
-        <p>Bella the Wolf, Kraliçe Elizabeth'e "koca karı" diyerek hakaret etmiştir. Bu tür davranış, sadece saldırı değil, aynı zamanda otorite ve geleneklere olan saygısızlığını da göstermektedir. Bella the Wolf'un bu tür davranışları neden sergilediği belirsizdir, ancak insanları gücendirmekten veya zararlı ideolojileri yaymaktan çekinmediği açıktır.</p>
-        
-        <h2>Son Düşünceler</h2>
-        <p>Bella the Wolf'un içeriği, sadece saldırı değil, aynı zamanda toksiktir ve onun davranışlarının bireylere ve topluluklara zarar verdiğini bilmek önemlidir. Saygılı diyalogu teşvik ederek ve zararlı davranışları eleştirerek, daha olumlu ve kapsayıcı bir çevrimiçi topluluk oluşturmak için çalışabiliriz.</p>
-        
-        <h2>Sonuç</h2>
-        <p>Sonuç olarak, Bella the Wolf'un davranışları endişe verici olup, onun bireylere ve topluluklara verdiği zararın farkında olmak önemlidir. Saygılı diyalogu teşvik ederek ve zararlı davranışları eleştirerek, daha olumlu ve kapsayıcı bir çevrimiçi topluluk oluşturmak için çalışabiliriz.</p>
-        
-        <a href="#top">Başa Dön</a>
+        <h2>Language Options</h2>
+        <button class="color-button" onclick="changeLanguage('en')">English</button>
+        <button class="color-button" onclick="changeLanguage('tr')">Türkçe</button>
     </div>
 </div>
 
+<footer class="footer">
+    <p>© 2024 Bella the Wolf Analysis. <a href="#top">Back to Top</a></p>
+</footer>
+
+<script>
+    function setTheme(themeName) {
+        document.body.className = themeName;
+    }
+
+    function changeLanguage(lang) {
+        const texts = {
+            en: {
+                title: "Bella the Wolf: A Controversial Figure",
+                about: "About Bella the Wolf",
+                religiousDisrespect: "Religious Disrespect",
+                disrespectSoldiers: "Disrespect Towards Soldiers",
+                attacksYouTubers: "Attacks on Famous YouTubers",
+                racismAccusations: "Racism Accusations",
+                mockingMentalHealth: "Mocking Mental Health",
+                insultingQueen: "Insulting Queen Elizabeth",
+                finalThoughts: "Final Thoughts",
+                conclusion: "Conclusion",
+                aboutText: "Bella the Wolf is a YouTuber known for his provocative and offensive content. He has been criticized for making fun of religions, soldiers, and even famous YouTubers like Technoblade and Tyrecords. His behavior has sparked outrage and concern among many in the online community.",
+                religiousDisrespectText: "One of the most disturbing aspects of Bella the Wolf's content is his blatant disrespect for religious beliefs. He has been known to mock and belittle people of various faiths, using derogatory language and stereotypes to perpetuate harmful and offensive ideologies. This kind of behavior is not only hurtful to individuals but also contributes to a culture of intolerance and discrimination.",
+                disrespectSoldiersText: "In addition to his attacks on religion, Bella the Wolf has also been criticized for his disrespect towards soldiers. He has made fun of their sacrifices, calling them 'brainwashed' and implying that they are somehow less intelligent or capable than others. This kind of rhetoric is not only offensive but also harmful, as it perpetuates negative stereotypes and undermines the important work that soldiers do to protect their countries.",
+                attacksYouTubersText: "Bella the Wolf's behavior towards famous YouTubers is also worth noting. He has been known to make fun of Technoblade and Tyrecords, using derogatory language and personal attacks to try and discredit them. This kind of behavior is not only unprofessional but also harmful, as it contributes to a culture of toxicity and negativity in the online community.",
+                racismAccusationsText: "Ironically, despite accusing others of being racist, Bella the Wolf has been accused of being racist himself. His content often targets marginalized groups and individuals, using harmful stereotypes and perpetuating negative attitudes towards people of color, women, and other underrepresented groups. This kind of behavior is not only offensive but also harmful, as it contributes to a culture of discrimination and oppression.",
+                mockingMentalHealthText: "Bella the Wolf's behavior towards people who struggle with depression and mental health issues is also worth noting. He has been known to make fun of people who are struggling, calling them 'emo' and perpetuating harmful stereotypes about mental illness. This kind of behavior is not only offensive but also harmful, as it contributes to a culture of stigma and shame around mental health.",
+                insultingQueenText: "In a bizarre display of disrespect, Bella the Wolf has even gone so far as to insult Queen Elizabeth, referring to her as a 'hag'. This kind of behavior is not only offensive but also shows a complete lack of respect for authority and tradition. It's unclear what motivates Bella the Wolf to engage in this kind of behavior, but it's clear that he has no qualms about offending people or perpetuating harmful ideologies.",
+                finalThoughtsText: "Bella the Wolf's content is not only harmful but also toxic, and it's essential to be aware of his actions and the harm he causes to individuals and communities. By promoting respectful dialogue and calling out harmful behavior, we can work towards creating a more positive and inclusive online community.",
+                conclusionText: "In conclusion, Bella the Wolf's behavior is a cause for concern, and it's essential to be aware of the harm he causes to individuals and communities. By promoting respectful dialogue and calling out harmful behavior, we can work towards creating a more positive and inclusive online community."
+            },
+            tr: {
+                title: "Bella the Wolf: Tartışmalı Bir Figür",
+                about: "Bella the Wolf Hakkında",
+                religiousDisrespect: "Dini Saygısızlık",
+                disrespectSoldiers: "Askerlere Saygısızlık",
+                attacksYouTubers: "Ünlü YouTuber'lara Saldırılar",
+                racismAccusations: "Irkçılık Suçlamaları",
+                mockingMentalHealth: "Ruh Sağlığını Alaya Alma",
+                insultingQueen: "Kraliçe Elizabeth'i Hakaret Etme",
+                finalThoughts: "Son Düşünceler",
+                conclusion: "Sonuç",
+                aboutText: "Bella the Wolf, tartışmalı ve saldırgan içeriği ile bilinen bir YouTuber'dır. Dinler, askerler ve hatta Technoblade ve Tyrecords gibi ünlü YouTuber'ları küçük düşürdüğü için eleştirilmiştir. Davranışları çevrimiçi toplulukta öfke ve endişe yaratmıştır.",
+                religiousDisrespectText: "Bella the Wolf'un içeriğinin en rahatsız edici yönlerinden biri, dini inançlara yönelik açıkça saygısızlığıdır. Çeşitli inançlardan insanları alay etme ve küçümseme konusunda bilinir, zararlı ve saldırgan ideolojileri sürdürmek için aşağılayıcı dil ve stereotipler kullanır. Bu tür davranışlar sadece bireyleri incitmekle kalmaz, aynı zamanda hoşgörüsüzlük ve ayrımcılık kültürüne katkıda bulunur.",
+                disrespectSoldiersText: "Din saldırılarının yanı sıra, Bella the Wolf, askerlerle ilgili saygısızlığı nedeniyle de eleştirilmiştir. Onların fedakarlıklarını alaya almış, onları 'beyin yıkanmış' olarak adlandırmış ve diğerlerinden daha az zeki veya yetenekli olduklarını ima etmiştir. Bu tür bir söylem sadece saldırgan olmakla kalmaz, aynı zamanda negatif stereotipleri sürdürür ve askerlerin ülkelerini koruma konusundaki önemli çalışmalarını zayıflatır.",
+                attacksYouTubersText: "Bella the Wolf'un ünlü YouTuber'lara karşı davranışları da dikkat çekicidir. Technoblade ve Tyrecords'u alay ederek, aşağılayıcı dil ve kişisel saldırılarla onları itibarsızlaştırmaya çalıştığı bilinir. Bu tür davranışlar sadece profesyonellikten uzak olmakla kalmaz, aynı zamanda çevrimiçi toplulukta toksisite ve negatiflik kültürüne katkıda bulunur.",
+                racismAccusationsText: "Ironik olarak, diğerlerini ırkçılıkla suçlamasına rağmen, Bella the Wolf'un kendisinin ırkçılıkla suçlandığı iddia edilmiştir. İçeriği sık sık marjinalleşmiş grupları ve bireyleri hedef alır, zararlı stereotipler kullanır ve renkli insanlar, kadınlar ve diğer azınlık gruplarına karşı negatif tutumları sürdürür. Bu tür davranışlar sadece saldırgan olmakla kalmaz, aynı zamanda ayrımcılık ve baskı kültürüne katkıda bulunur.",
+                mockingMentalHealthText: "Bella the Wolf'un depresyon ve ruhsal sağlık sorunları yaşayan insanlara karşı davranışları da dikkat çekicidir. Mücadele eden insanları 'emo' olarak adlandırarak, mental hastalık hakkında zararlı stereotipleri sürdürdüğü bilinir. Bu tür davranışlar sadece saldırgan olmakla kalmaz, aynı zamanda ruhsal sağlık etrafında damgalar ve utanç kültürüne katkıda bulunur.",
+                insultingQueenText: "Kraliçe Elizabeth'e hakaret etme konusunda garip bir saygısızlık gösterisi olarak, Bella the Wolf onu 'cadı' olarak nitelendirmiştir. Bu tür davranışlar sadece saldırgandır, aynı zamanda otorite ve geleneklere tamamen saygısızlık gösterir. Bella the Wolf'un bu tür davranışlara neden yöneldiği net değil, ancak insanları rahatsız etmek veya zararlı ideolojileri sürdürmek konusunda hiçbir çekincesi olmadığı açıktır.",
+                finalThoughtsText: "Bella the Wolf'un içeriği sadece zararlı olmakla kalmaz, aynı zamanda toksiktir ve onun bireylere ve topluluklara verdiği zararın farkında olmak önemlidir. Saygılı diyalogları teşvik ederek ve zararlı davranışları ortaya çıkararak, daha olumlu ve kapsayıcı bir çevrimiçi topluluk oluşturmak için çalışabiliriz.",
+                conclusionText: "Sonuç olarak, Bella the Wolf'un davranışları endişe kaynağıdır ve bireylere ve topluluklara verdiği zararın farkında olmak önemlidir. Saygılı diyalogları teşvik ederek ve zararlı davranışları ortaya çıkararak, daha olumlu ve kapsayıcı bir çevrimiçi topluluk oluşturmak için çalışabiliriz."
+            }
+        };
+
+        const langTexts = texts[lang] || texts.en;
+        document.getElementById('title').textContent = langTexts.title;
+        document.getElementById('about').textContent = langTexts.about;
+        document.getElementById('religious-disrespect').textContent = langTexts.religiousDisrespect;
+        document.getElementById('disrespect-soldiers').textContent = langTexts.disrespectSoldiers;
+        document.getElementById('attacks-youtubers').textContent = langTexts.attacksYouTubers;
+        document.getElementById('racism-accusations').textContent = langTexts.racismAccusations;
+        document.getElementById('mocking-mental-health').textContent = langTexts.mockingMentalHealth;
+        document.getElementById('insulting-queen').textContent = langTexts.insultingQueen;
+        document.getElementById('final-thoughts').textContent = langTexts.finalThoughts;
+        document.getElementById('conclusion').textContent = langTexts.conclusion;
+
+        document.getElementById('about-text').textContent = langTexts.aboutText;
+        document.getElementById('religious-disrespect-text').textContent = langTexts.religiousDisrespectText;
+        document.getElementById('disrespect-soldiers-text').textContent = langTexts.disrespectSoldiersText;
+        document.getElementById('attacks-youtubers-text').textContent = langTexts.attacksYouTubersText;
+        document.getElementById('racism-accusations-text').textContent = langTexts.racismAccusationsText;
+        document.getElementById('mocking-mental-health-text').textContent = langTexts.mockingMentalHealthText;
+        document.getElementById('insulting-queen-text').textContent = langTexts.insultingQueenText;
+        document.getElementById('final-thoughts-text').textContent = langTexts.finalThoughtsText;
+        document.getElementById('conclusion-text').textContent = langTexts.conclusionText;
+    }
+</script>
 </body>
 </html>
